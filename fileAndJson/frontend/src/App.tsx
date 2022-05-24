@@ -1,6 +1,10 @@
 import React, {useCallback, useState} from 'react';
 import axios from 'axios';
 
+interface Uploader {
+    name: string;
+}
+
 function App() {
     const [file, setFile] = useState<File | null>(null);
 
@@ -17,6 +21,11 @@ function App() {
 
         const formData = new FormData();
         await formData.append('file', file);
+        const uploader: Uploader = {name: 'huewilliams'};
+        await formData.append('uploader', JSON.stringify(uploader));
+
+        // for spring server
+        // await formData.append('uploader', new Blob([JSON.stringify(uploader)], {type: 'application/json'}));
 
         const res = await axios.post(
             'http://localhost:4000/file/upload',

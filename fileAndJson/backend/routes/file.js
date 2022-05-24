@@ -18,6 +18,7 @@ const router = express.Router();
 
 // upload.singe(fieldname), fieldname은 폼에 정의된 필드명
 router.post('/upload', upload.single('file'), (req, res) => {
+    console.log('uploader is ', JSON.parse(req.body.uploader).name);
     res.status(201).json({message: 'file upload success!'});
 })
 
