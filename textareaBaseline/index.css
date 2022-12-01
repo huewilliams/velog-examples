@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.wrapper {
+    width: max-content;
+    background-color: cornflowerblue;
+}
+
+.default {
+    box-sizing: border-box;
+    height: 40px;
+}
+
+.block {
+    display: block;
+}
+
+.bottom {
+    vertical-align: bottom;
+}
